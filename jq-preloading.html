@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #333;
+		}
+		.wrap{
+			width: 1200px;
+			margin: 20px auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		.box{
+			width: 350px;
+			height: 200px;
+			border: 3px solid white;
+		}
+		.box img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.preload{
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			/*background-color: blue;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			transition: .5s;
+		}
+		.preload img{
+			width: 100px;
+			height: 100px;
+			position: relative;
+			z-index: 1;
+		}
+		.preload::before{
+			content:'';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50%;
+			height: 100%;
+			background-color:black;
+			transition: .5s;
+		}
+		.preload::after{
+			content:'';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50%;
+			height: 100%;
+			background-color: black;
+			transition: .5s;
+		}
+		.preload.loaded::before{
+			content:'';
+			position: absolute;
+			top: 0;
+			left: -50%;
+			width: 50%;
+			height: 100%;
+			background-color:black;
+		}
+		.preload.loaded::after{
+			content:'';
+			position: absolute;
+			top: 0;
+			right: -50%;
+			width: 50%;
+			height: 100%;
+			background-color: black;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class="preload">
+		<img src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif" alt="">
+	</div>
+	<div class="wrap">
+		<div class="box"><img src="https://picsum.photos/350/200?random=1" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=2" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=3" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=4" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=5" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=6" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=7" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=8" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=9" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=10" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=11" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=12" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=13" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=14" alt=""></div>
+		<div class="box"><img src="https://picsum.photos/350/200?random=15" alt=""></div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<script>
+		$(window).on('load',function(){
+
+			$('.preload img').fadeOut();
+			$('.preload').addClass('loaded').fadeOut(1000)
+			
+		})
+	</script>
+</body>
+</html>

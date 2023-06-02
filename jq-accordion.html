@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.accordion{
+			margin: 20px;
+			width: 200px;
+			border: 1px solid black;
+		}
+		.title{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background-color: black;
+			border-bottom: 1px solid gray;
+			color:white;
+			cursor:pointer;
+		}
+		.content{
+			padding: 10px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="accordion">
+		<div id="title01" class="title">title1</div>
+		<div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto adipisci magnam, non nam consequatur autem, ullam ab laudantium exercitationem sed, fugiat amet ipsam! Beatae vel, ipsam reprehenderit molestiae. Veritatis, quasi.</div>
+		<div id="title02" class="title">title2</div>
+		<div class="content">Tempore odio tempora soluta corporis saepe quam non dolore quo provident aut, ipsa libero ullam ducimus enim quibusdam. Cupiditate, perspiciatis harum in, ipsa nesciunt fuga doloribus pariatur explicabo sapiente commodi!</div>
+		<div id="title03" class="title">title3</div>
+		<div class="content">Magni aut eos, debitis dolores rerum, facilis deserunt excepturi, quae neque nihil nobis molestias explicabo itaque asperiores, pariatur illo iure quod ut fugit quibusdam ex error doloribus. Obcaecati, dicta repudiandae.</div>
+		<div id="title04" class="title">title4</div>
+		<div class="content">Perspiciatis eveniet quos soluta nisi eligendi quae voluptatibus assumenda delectus eius nobis, velit numquam, illo facere placeat atque ad voluptates mollitia rerum ducimus esse corrupti beatae omnis distinctio sequi. Pariatur!</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<script>
+		$(function(){
+			$('.title').click(function(){
+				$(this).next().slideToggle();
+			})
+
+		})
+	</script>
+</body>
+</html>

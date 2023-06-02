@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			width: 100%;
+			height: 100vh;
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.tabPanel{
+			width: 600px;
+			border:1px solid #aaa;
+		}
+		.tabBox{
+			background-color: #ddd;
+			
+			display: flex;
+		}
+		.tabBox .tab{
+			width: 100px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-top: 5px solid #ddd;
+			cursor: pointer;
+		}
+		.tabBox .tab.active{
+			border-color: #80f;
+			background-color: white;
+		}
+		.content{
+			width: 100%;
+			height: 400px;
+			padding: 20px;
+			display: none;
+		}
+		.content.active{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="tabPanel">
+		<div class="tabBox">
+			<div class="tab tab1 active">title1</div>
+			<div class="tab tab2">title2</div>
+			<div class="tab tab3">title3</div>
+			<div class="tab tab4">title4</div>
+		</div>
+		<div class="contentBox">
+			<div class="content content1 active">
+				<h1>Title01</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores saepe nostrum repellat facere voluptas fugiat nisi, enim atque cupiditate magnam. Voluptatum quae vitae minus officiis libero dolores maiores deleniti repellat.</p>
+			</div>
+			<div class="content content2">
+				<h1>Title02</h1>
+				<p>Animi iusto magni atque alias enim vitae sed natus molestias dolorum praesentium totam a magnam incidunt accusamus aliquam iste, ex blanditiis nemo ut reiciendis doloremque. Debitis eius laborum incidunt commodi!</p>
+			</div>
+			<div class="content content3">
+				<h1>Title03</h1>
+				<p>Nobis, modi suscipit nulla, voluptates ipsa consequuntur accusamus tempora, nesciunt, repellat aliquam excepturi quos. Quis laborum velit sunt. Similique dolorum delectus ea veniam natus ad porro neque repellat debitis laborum.</p>
+			</div>
+			<div class="content content4">
+				<h1>Title04</h1>
+				<p>Assumenda, veritatis, reiciendis non laborum excepturi aut cupiditate minus, iste natus laudantium esse? Quos, repellendus inventore, quod enim, possimus laudantium nobis deleniti minima saepe laboriosam sit eaque, expedita sint fugit.</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<script>
+		$(function(){
+
+			$('.tab').mousemove(function(){
+				let i = $(this).index()
+				console.log(i)
+				$('.tab').removeClass('active')
+				$('.tab').eq(i).addClass('active')
+				$('.content').removeClass('active')
+				$('.content').eq(i).addClass('active')
+			})
+			// $('.tab2').mousemove(function(){
+			// 	$('.tab').removeClass('active')
+			// 	$('.tab2').addClass('active')
+			// 	$('.content').removeClass('active')
+			// 	$('.content2').addClass('active')
+			// })
+			// $('.tab1').mousemove(function(){
+			// 	$('.tab').removeClass('active')
+			// 	$('.tab1').addClass('active')
+			// 	$('.content').removeClass('active')
+			// 	$('.content1').addClass('active')
+			// })
+			// $('.tab3').mousemove(function(){
+			// 	$('.tab').removeClass('active')
+			// 	$('.tab3').addClass('active')
+			// 	$('.content').removeClass('active')
+			// 	$('.content3').addClass('active')
+			// })
+			// $('.tab4').mousemove(function(){
+			// 	$('.tab').removeClass('active')
+			// 	$('.tab4').addClass('active')
+			// 	$('.content').removeClass('active')
+			// 	$('.content4').addClass('active')
+			// })
+		})
+	</script>
+</body>
+</html>
